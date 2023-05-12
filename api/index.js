@@ -8,6 +8,7 @@ const cookieParser = require('cookie-parser');
 const multer = require('multer')
 const uploadMiddleware = multer({ dest: 'uploads/ '})
 const fs = require('fs')
+const PORT = process.env.PORT || 8000;
 
 
 const dotenv = require('dotenv');
@@ -29,7 +30,7 @@ const options = { useNewUrlParser: true, useUnifiedTopology: true };
 mongoose.connect(dbURI, options)
   .then(() => {
     console.log('Connected to the database');
-    app.listen(8000, () => {
+    app.listen(PORT, () => {
       console.log('Server started on port 8000');
     });
   })
