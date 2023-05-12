@@ -14,11 +14,8 @@
   },
   "scripts": {
     "build": "webpack --mode production"
-<<<<<<< HEAD
   },
   "devDependencies": {
     "webpack": "^5.82.1"
-=======
->>>>>>> 148a2ec887390b1eac881b19ac852ee1d2caa521
   }
 }
