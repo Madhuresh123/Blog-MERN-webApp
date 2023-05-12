@@ -27,6 +27,12 @@ app.use('/uploads', express.static(__dirname + '/uploads'));
 const dbURI = process.env.MONGO_URI;
 const options = { useNewUrlParser: true, useUnifiedTopology: true };
 
+const path = require('path')
+
+app.get('/', (req,res) => {
+  res.send("main");
+})
+
 mongoose.connect(dbURI, options)
   .then(() => {
     console.log('Connected to the database');
@@ -197,7 +203,6 @@ app.get('/post/:id', async (req, res) => {
   const postDoc = await Post.findById(id).populate('author', ['username']);
   res.json(postDoc);
 })
-
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
