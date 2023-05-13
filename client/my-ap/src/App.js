@@ -22,9 +22,6 @@ function App() {
         <Route path='/post/:id' element= { <PostPage/>}></Route>
         <Route path='/edit/:id' element= { <EditPost/>}></Route>
 
-
-
-
       </Route>
     </Routes>
     
