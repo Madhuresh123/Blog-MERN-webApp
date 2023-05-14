@@ -33,6 +33,11 @@ app.get('/', (req,res) => {
   res.send("main");
 })
 
+if(process.env.NODE_ENV == "production"){
+  app.use(express.static("client/my-ap/build"))
+}
+
+
 mongoose.connect(dbURI, options)
   .then(() => {
     console.log('Connected to the database');
